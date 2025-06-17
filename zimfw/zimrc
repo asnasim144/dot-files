@@ -1,0 +1,108 @@
+# Zimfw configuration file
+
+# Modules
+zmodules=(directory environment git history input utility custom \
+          syntax-highlighting history-substring-search \
+          prompt completion)
+
+# Prompt theme
+zprompt_theme='eriner'
+
+# Custom directory
+zcustom_dir="${ZDOTDIR:-${HOME}}/.zim/custom"
+
+# Syntax highlighting
+zstyle ':zim:zmodule:syntax-highlighting' theme 'catppuccin-mocha'
+
+# History substring search
+zstyle ':zim:zmodule:history-substring-search' color 'yes'
+zstyle ':zim:zmodule:history-substring-search' case-sensitive 'yes'
+
+# Completion
+zstyle ':zim:completion' dumpfile "${ZDOTDIR:-${HOME}}/.zcompdump"
+
+# Custom settings
+# Aliases
+alias ll='ls -la'
+alias la='ls -a'
+alias l='ls -l'
+alias c='clear'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# Git aliases
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git pull'
+alias gd='git diff'
+alias gb='git branch'
+alias gco='git checkout'
+
+# Docker aliases
+alias d='docker'
+alias dc='docker-compose'
+alias dps='docker ps'
+alias dpsa='docker ps -a'
+alias di='docker images'
+alias dex='docker exec -it'
+
+# Python aliases
+alias py='python3'
+alias pip='pip3'
+alias venv='python3 -m venv'
+alias activate='source venv/bin/activate'
+
+# Node aliases
+alias n='node'
+alias ni='npm install'
+alias nr='npm run'
+alias ns='npm start'
+alias nt='npm test'
+
+# History settings
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+
+# Environment variables
+export EDITOR='vim'
+export VISUAL='vim'
+export PATH="$HOME/.local/bin:$PATH"
+
+# Custom functions
+function mkcd() {
+    mkdir -p "$1" && cd "$1"
+}
+
+function extract() {
+    if [ -f "$1" ]; then
+        case "$1" in
+            *.tar.bz2)   tar xjf "$1"     ;;
+            *.tar.gz)    tar xzf "$1"     ;;
+            *.bz2)       bunzip2 "$1"     ;;
+            *.rar)       unrar e "$1"     ;;
+            *.gz)        gunzip "$1"      ;;
+            *.tar)       tar xf "$1"      ;;
+            *.tbz2)      tar xjf "$1"     ;;
+            *.tgz)       tar xzf "$1"     ;;
+            *.zip)       unzip "$1"       ;;
+            *.Z)         uncompress "$1"  ;;
+            *.7z)        7z x "$1"        ;;
+            *)           echo "'$1' cannot be extracted via extract()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
+# Load custom modules
+if [ -d "${zcustom_dir}" ]; then
+    for file in "${zcustom_dir}"/*.zsh; do
+        [ -f "${file}" ] && source "${file}"
+    done
+fi 

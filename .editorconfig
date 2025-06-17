@@ -1,0 +1,224 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
+
+# Python files
+[*.py]
+indent_style = space
+indent_size = 4
+
+# JavaScript/TypeScript files
+[*.{js,jsx,ts,tsx}]
+indent_style = space
+indent_size = 2
+
+# JSON files
+[*.json]
+indent_style = space
+indent_size = 2
+
+# YAML files
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# HTML files
+[*.html]
+indent_style = space
+indent_size = 2
+
+# CSS/SCSS files
+[*.{css,scss}]
+indent_style = space
+indent_size = 2
+
+# Markdown files
+[*.md]
+trim_trailing_whitespace = false
+
+# Makefiles require tabs
+[Makefile]
+indent_style = tab
+
+# Shell scripts
+[*.sh]
+indent_style = space
+indent_size = 2
+
+# Docker files
+[Dockerfile]
+indent_style = space
+indent_size = 4
+
+# Configuration files
+[*.{conf,config,ini}]
+indent_style = space
+indent_size = 4
+
+# SQL files
+[*.sql]
+indent_style = space
+indent_size = 4
+
+# XML files
+[*.xml]
+indent_style = space
+indent_size = 2
+
+# Properties files
+[*.properties]
+indent_style = space
+indent_size = 4
+
+# Gradle files
+[*.gradle]
+indent_style = space
+indent_size = 4
+
+# Java files
+[*.java]
+indent_style = space
+indent_size = 4
+
+# Kotlin files
+[*.kt]
+indent_style = space
+indent_size = 4
+
+# Ruby files
+[*.rb]
+indent_style = space
+indent_size = 2
+
+# PHP files
+[*.php]
+indent_style = space
+indent_size = 4
+
+# Go files
+[*.go]
+indent_style = tab
+
+# Rust files
+[*.rs]
+indent_style = space
+indent_size = 4
+
+# C/C++ files
+[*.{c,cpp,h,hpp}]
+indent_style = space
+indent_size = 4
+
+# C# files
+[*.cs]
+indent_style = space
+indent_size = 4
+
+# Swift files
+[*.swift]
+indent_style = space
+indent_size = 4
+
+# Scala files
+[*.scala]
+indent_style = space
+indent_size = 2
+
+# Clojure files
+[*.clj]
+indent_style = space
+indent_size = 2
+
+# Haskell files
+[*.hs]
+indent_style = space
+indent_size = 4
+
+# Lua files
+[*.lua]
+indent_style = space
+indent_size = 2
+
+# R files
+[*.r]
+indent_style = space
+indent_size = 2
+
+# MATLAB files
+[*.m]
+indent_style = space
+indent_size = 4
+
+# Fortran files
+[*.{f,f90,f95}]
+indent_style = space
+indent_size = 4
+
+# Assembly files
+[*.{s,asm}]
+indent_style = space
+indent_size = 8
+
+# Batch files
+[*.{bat,cmd}]
+end_of_line = crlf
+
+# PowerShell files
+[*.ps1]
+end_of_line = crlf
+indent_style = space
+indent_size = 4
+
+# VBScript files
+[*.vbs]
+end_of_line = crlf
+indent_style = space
+indent_size = 4
+
+# VBA files
+[*.{bas,cls,frm}]
+end_of_line = crlf
+indent_style = space
+indent_size = 4
+
+# Vim files
+[*.vim]
+indent_style = space
+indent_size = 2
+
+# Emacs files
+[*.el]
+indent_style = space
+indent_size = 2
+
+# TeX files
+[*.{tex,sty,cls}]
+indent_style = space
+indent_size = 2
+
+# Markdown files
+[*.md]
+trim_trailing_whitespace = false
+
+# Documentation files
+[*.{txt,text}]
+trim_trailing_whitespace = false
+
+# Log files
+[*.log]
+trim_trailing_whitespace = false
+end_of_line = lf
+
+# Binary files
+[*.{png,jpg,jpeg,gif,ico,svg,pdf,zip,tar,gz,rar,7z}]
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset 
