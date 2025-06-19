@@ -127,4 +127,47 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+
+
+
+# Aliases
+alias zshconfig="nvim ~/.zshrc"
+alias sourcezsh="source ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias ll="ls -la"
+alias la="ls -a"
+alias l="ls -l"
+alias c="clear"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Git aliases
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+alias gpl="git pull"
+alias gd="git diff"
+alias gb="git branch"
+alias gco="git checkout"
+
+# Docker aliases
+alias d="docker"
+alias dc="docker-compose"
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+alias di="docker images"
+alias dex="docker exec -it"
+
+# Node aliases
+alias n="node"
+alias ni="npm install"
+alias nr="npm run"
+alias ns="npm start"
+alias nt="npm test"
+
 alias asn='cd /mnt/d/asn'
