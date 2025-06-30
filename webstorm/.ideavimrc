@@ -1,0 +1,126 @@
+" Show a few lines of context around the cursor.
+set scrolloff=5
+" Do incremental searching.
+set incsearch
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" === Enable IdeaVim Plugins ===
+" See: https://jb.gg/ideavim-plugins
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'vim-matchit'
+Plug 'terryma/vim-multiple-cursors'
+
+" === Map IDE Actions ===
+" See: https://jb.gg/abva4t
+map \r <Action>(ReformatCode)
+map <leader>d <Action>(Debug)
+map \b <Action>(ToggleLineBreakpoint)
+
+" === Leader Key ===
+let mapleader = " "
+
+" === Basic Settings ===
+set scrolloff=5
+set number
+set relativenumber
+set hlsearch
+set incsearch
+set ideajoin
+set clipboard^=ideaput
+set ignorecase
+set smartcase
+set visualbell
+set history=1000
+
+" === Plugin Requirements ===
+set surround
+set commentary
+set easymotion
+set highlightedyank
+set matchit
+set multiple-cursors
+set argtextobj
+
+" === Normal Mode Mappings ===
+" Buffer navigation
+nnoremap <S-h> :bprevious<CR>
+nnoremap <S-l> :bnext<CR>
+
+" Splits
+nnoremap <leader>v :vsplit<CR>
+nnoremap <leader>s :split<CR>
+
+" Window navigation
+nmap <leader>h <Action>(MoveEditorToLeftSplit)
+nmap <leader>j <Action>(NextSplit)
+nmap <leader>k <Action>(PrevSplit)
+nmap <leader>l <Action>(MoveEditorToRightSplit)
+
+" Terminal navigation
+map <leader>t <Action>(ActivateTerminalToolWindow)
+" map <leader>c <Action>(ActivateProjectToolWindow)
+" focus on the editor
+map <leader>e <Action>(FocusEditor)
+" focus on the editor from the terminal
+nmap <leader>f <Action>(FocusEditorFromTerminal)
+
+" File operations
+nnoremap <leader>w :w!<CR>
+nmap <leader>q :q!<CR>
+nnoremap <leader>x :x!<CR>
+
+" Navigation
+nmap [d <Action>(GotoPreviousError)
+nmap ]d <Action>(GotoNextError)
+nmap <leader>ca <Action>(ShowIntentionActions)
+nmap <leader>f <Action>(GotoFile)
+nmap <leader>p <Action>(ReformatCode)
+nnoremap <leader>n :nohl<CR>
+
+nmap <leader>gd <Action>(GotoDeclaration)
+nmap <leader>i <Action>(QuickImplementations)
+nmap <leader>u <Action>(FindUsages)
+nmap <leader>r <Action>(Run)
+
+" Code navigation
+nmap gh <Action>(QuickJavaDoc)
+nmap gb <Action>(Back)
+nmap gf <Action>(Forward)
+
+" Debug
+
+" === Visual Mode Mappings ===
+vmap < <Action>(EditorUnindentSelection)
+vmap > <Action>(EditorIndentSelection)
+vmap J <Action>(MoveLineDown)
+vmap K <Action>(MoveLineUp)
+vmap <leader>c <Action>(CommentByBlockComment)
+
+" === Insert Mode Mappings ===
+imap <C-Space> <Action>(CodeCompletion)
+nmap <leader>ae vae
+nmap <leader>de dae
+nmap <leader>al GVgg
+map <leader>e <Action>(ActivateProjectToolWindow)
+
+" Copy paste
+vmap <leader>p "*p
+vmap <leader>y "*y
+
+" Project Navigation
+" Navigate down in project view
+map <leader>j :action SelectNextRow<CR>
+
+" Navigate up in project view
+map <leader>k :action SelectPreviousRow<CR>
+
+" Navigate left (collapse directory)
+map <leader>h :action CollapseAll<CR>
+
+" Navigate right (expand directory)
+map <leader>l :action ExpandAll<CR>
+
+" Toggle Project tool window (same as Alt+1)
+map <leader>e :action ActivateProjectToolWindow<CR>
